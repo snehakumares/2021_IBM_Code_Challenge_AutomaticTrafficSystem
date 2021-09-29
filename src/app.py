@@ -1,13 +1,19 @@
 from flask import Flask, render_template, request
 from keras.models import load_model
 from keras.preprocessing import image
+import vehiclecounter
 
 app = Flask(__name__)
 
 
 def predict_label(img_path):
-	return 60
-	pass
+	x = vehiclecounter.count_vehicle(img_path)
+	if x < 7:
+		return 15
+	elif x < 15:
+		return 30
+	else:
+		return 60
 
 
 # routes
@@ -18,14 +24,22 @@ def main():
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
 	if request.method == 'POST':
-		img = request.files['my_image']
-
-		img_path = "static/" + img.filename	
-		img.save(img_path)
-		print(img_path)
-		p = predict_label(img_path)
-		print(p)
-	return render_template("index.html", prediction = p, img_path = img_path)
+		try:
+			img = request.files['my_image']
+			img_path = "static/" + img.filename
+			img.save(img_path)
+			print(img_path)
+			p = predict_label(img_path)
+			print(p)
+			return render_template("index.html", prediction1=p, img_path1=img_path)
+		except:
+			img = request.files['my_image1']
+			img_path = "static/" + img.filename
+			img.save(img_path)
+			print(img_path)
+			p = predict_label(img_path)
+			print(p)
+			return render_template("index.html", prediction2 = p, img_path2 = img_path)
 
 
 if __name__ =='__main__':

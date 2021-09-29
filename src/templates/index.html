@@ -1,59 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Automatic Traffic System</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Automatic Traffic System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="static/main.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-  <h1 class="jumbotron bg-primary">Automatic Traffic System</h1>
-  <br><br>
-  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <h1 class="jumbotron">Automatic Traffic System</h1>
+        <br><br>
+        <div class="main-content">
+            <div class="side1">
+                <h2>Side 1</h2>
+                <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
-      <div class="col-sm-10">          
-        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
-      </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd1">Upload Your Image :</label><br>
+                        <div class="col-sm-12">
+                            <input type="file" class="form-control" name="my_image" required
+                                id="pwd1">
+                        </div>
+                        <input type="hidden" name="ct2" value="0">
+                    </div>
+                    {% if prediction1 %}
+                    {% else %}
+                    <div class="form-group">
+                        <div class="button" id="button1">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </form>
+
+                {% if prediction1 %}
+                <div class="outputimg">
+                    <img src="{{img_path1}}">
+                </div>
+                <div class="countdown">
+                    <h5> Countdown : {{prediction1}} </h5>
+                </div>
+                {% endif %}
+            </div>
+            <div class="side2">
+                <h2>Side 2</h2>
+                <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd2">Upload Your Image :</label>
+                        <div class="col-sm-12">
+                            <input type="file" class="form-control"  name="my_image1" required
+                                id="pwd2">
+                        </div>
+                        <input type="hidden" name="ct1" value="0">
+                    </div>
+                    {% if prediction2 %}
+                    {% else %}
+                    <div class="form-group">
+                        <div class="button" id="button2">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                    {% endif %}
+                </form>
+
+                {% if prediction2 %}
+                <div class="outputimg">
+                    <img src="{{img_path2}}">
+                </div>
+                <div class="countdown">
+                    <h5> Countdown : {{prediction2}} </h5>
+                </div>
+                <script>
+                    function disable2(){
+                        document.getElementById("button2").display="none";
+                        document.getElementById("button1").display="block";
+                    }
+                    disable2();
+                </script>
+                {% endif %}
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-    </div>
-  </form>
-
-	{% if prediction %}
-  <div style="width:60%;;float:left;height:50vh;">
-    <img src="{{img_path}}" height="400px" width="400px">
-  </div>
-  <div style="display:flex;float:right;align:center;width:30%;align-items:center;height:40vh;">
-	<h2> Countdown   : <i> {{prediction}} </i></h2>
-  </div>
-	{% endif %}
-
-</div>
-
-
-
-
-
-
-
 </body>
+
 </html>
-
-
-
-
-
-
-
-
