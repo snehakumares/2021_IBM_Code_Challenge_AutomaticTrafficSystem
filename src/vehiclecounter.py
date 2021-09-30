@@ -1,9 +1,7 @@
 import cv2
 import cvlib as cv
-import matplotlib.pyplot as plt
-import cvlib as cv
-from cvlib.object_detection import draw_bbox
 
+#from cvlib.object_detection import draw_bbox
 
 def count_vehicle(img):
     im = cv2.imread(img)
