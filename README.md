@@ -50,3 +50,11 @@ The repository is split into two segment:
 - Since the accuracy of the system is subjected to vehicle count, we could integrate training mechanism so that the system can learn from the experiences.
 - Timer can be automatically adjusted according to the type of vechiles (two wheeler are comparitively faster than heavier vehicles). Hence training can be given to implement this functionality.
 - Data about vehicle traffic and effectiveness can be stored in database which can be used for modelling the system updates and can be used by officials to know the traffic pattern in large cities.
+
+## Contributors
+
+- Abhilash Nair *NSS College of Engineering, Palakkad*
+- Abhishek T *NSS College of Engineering, Palakkad*
+- Amrutha V.P *NSS College of Engineering, Palakkad*
+- Divya K *NSS College of Engineering, Palakkad*
+- Sneha Kumaresan *NSS College of Engineering, Palakkad*
