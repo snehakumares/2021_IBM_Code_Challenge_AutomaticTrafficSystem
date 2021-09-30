@@ -10,7 +10,9 @@ We all have experienced long queues and waiting time in traffic, haven't us? Eve
 
 We came up with a solution for this. An automated, smart traffic signalling system, which is capable of analysing the traffic beforehand and providing signalling according to the congestion. Each traffic signals and/or junctions have cameras which captures images in a particular direction and sends to a backend server where the image is processed and an optimum time limit is returned.
 
-## System Users and Usecase
+## Code Flow and System Users
+
+![Flow Diagram](https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem/blob/main/images/flow.png)
 
 This is as an embedded system. The software and required hardware are integrated together to perform the specific task. Hence maintainance and activation is only the key external activities that is needed to be performed in the system.
 
@@ -18,10 +20,6 @@ This is as an embedded system. The software and required hardware are integrated
     - System analysts
     - System maintainers
     - Traffic Control Authority
-
-## Code Flow
-
-![Flow Diagram](https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem/blob/main/images/flow.png)
 
 ## How to use
 
