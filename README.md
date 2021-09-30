@@ -30,5 +30,7 @@ The repository is split into two segment:
 - `src` folder contains a Flask application which can be used to demonstrate the interaction of camera and backend processing.
 
 `Step 1 `: Excute command ```pip install requirements.txt```. This will install all the dependency libraries needed to run the software.
+
 `Step 2 `: Navigate into `src` folder and execute the command `py app.py`
+
 `Step 3 `: The application will now be running on local host. i.e. `https://127.0.0.5000/`
