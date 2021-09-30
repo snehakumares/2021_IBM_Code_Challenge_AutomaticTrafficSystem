@@ -38,3 +38,5 @@ The repository is split into two segment:
 `Step 2` : Navigate into `src` folder and execute the command `py app.py`
 
 `Step 3` : The application will now be running on local host. i.e. `https://127.0.0.5000/`
+
+!(https://prezi.com/v/0sub8ytndgi-/)
