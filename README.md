@@ -58,3 +58,7 @@ The repository is split into two segment:
 - Amrutha V.P *NSS College of Engineering, Palakkad*
 - Divya K *NSS College of Engineering, Palakkad*
 - Sneha Kumaresan *NSS College of Engineering, Palakkad*
+
+## License
+
+This repository is licensed under Apache License, v2.0. See [LICENSE](https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem/blob/main/LICENSE) for full licensing text.
