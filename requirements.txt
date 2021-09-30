@@ -3,3 +3,4 @@ cvlib
 matplotlib
 tensorflow
 keras
+flask

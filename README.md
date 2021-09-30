@@ -12,4 +12,23 @@ We came up with a solution for this. An automated, smart traffic signalling syst
 
 ## System Users and Usecase
 
-This is as an embedded system. The software and required hardware are integrated together to perform the specific task. Hence maintainance and activation is only the key external activities that is needed to be performed in the system. System analysts, system maintainers, and various authorities like traffic control have access to the system for reviewing and retrieval of various information.
+This is as an embedded system. The software and required hardware are integrated together to perform the specific task. Hence maintainance and activation is only the key external activities that is needed to be performed in the system.
+
+- Users who have access to the system:
+    - System analysts
+    - System maintainers
+    - Traffic Control Authority
+
+## How to use
+
+### Pre-requisites
+- Download Python from [here](https://www.python.org/downloads/)
+- Code Editor of your choice. (Eg. VSCode, Sublime Text, Atom, etc.)
+
+The repository is split into two segment:
+- `bin` folder contains the core python scripts that can be embedded into a system for direct functioning.
+- `src` folder contains a Flask application which can be used to demonstrate the interaction of camera and backend processing.
+
+`Step 1 `: Excute command ```pip install requirements.txt```. This will install all the dependency libraries needed to run the software.
+`Step 2 `: Navigate into `src` folder and execute the command `py app.py`
+`Step 3 `: The application will now be running on local host. i.e. `https://127.0.0.5000/`
