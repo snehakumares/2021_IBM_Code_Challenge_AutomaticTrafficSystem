@@ -21,7 +21,7 @@ This is as an embedded system. The software and required hardware are integrated
 
 ## Code Flow
 
-![Flow Diagram](https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem/images/flow.png)
+![Flow Diagram](https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem/blob/main/images/flow.png)
 
 ## How to use
 
