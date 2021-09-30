@@ -5,13 +5,14 @@ import vehiclecounter
 
 app = Flask(__name__)
 
+def predict_label(img_path):
+
 # function which takes image file name and returns the countdown
 # the number of vehicles will be stored in x
 # if the number of vehicles is less than 7, the countdown will be 15
 # if it is more than 7 and less than 15, the countdown will be 30
 # if it is more than 15, the countdown will be 60
 
-def predict_label(img_path):
 	x = vehiclecounter.count_vehicle(img_path)
 	if x < 7:
 		return 15
