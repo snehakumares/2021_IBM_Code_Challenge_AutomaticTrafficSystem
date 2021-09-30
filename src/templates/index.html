@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Automatic Traffic System</title>
+    <title>Automatic Traffic Signalling System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,13 +10,107 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            background-color: rgba(221, 219, 219, 0.986);
+            padding:0;
+            height: 100%;
+        }
+        .jumbotron{
+            background-color: rgb(19, 16, 16);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 4em;
+            margin:0;
+        }
+        .main-content{
+            margin-top:0;
+        }
+        .side1,.side2{
+            width:40%;
+            margin:20px;
+
+        }
+        .side1{
+            float:left;
+        }
+        .side2{
+            float:right;
+        }
+        .side1 h2,.side2 h2{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+            margin-top:0;
+        }
+        .form-group .control-label{
+            margin-bottom: 10px;
+            width:100%;
+            text-align: left;
+        }
+        .button{
+            text-align:center;
+        }
+        img{
+            height:200px;
+            width:200px;
+        }
+        .outputimg{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .countdown{
+            margin-top:20px;
+            margin-bottom:20px;
+            width:100%;
+            align-items:center;
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+        }
+        .countdown h5{
+            font-size: 1.5em;
+            text-align:center;
+            font-weight:bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .signal{
+            display:flex;
+            justify-content:center;
+        }
+        .go,.stop{
+            width:100px;
+            height:100px;
+            border-radius: 100%;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .go{
+             background-color:green;
+         }
+         .stop{
+            background-color:red;
+         }
+         .go p,.stop p{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2em;
+         }
+         .output{
+            min-height:215px;
+            min-width:300px;
+         }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h1 class="jumbotron">Automatic Traffic System</h1>
-        <br><br>
+        <h1 class="jumbotron">Automatic Traffic Signalling System</h1>
+        <br>
         <div class="main-content">
             <div class="side1">
                 <h2>Side 1</h2>
@@ -28,7 +122,6 @@
                             <input type="file" class="form-control" name="my_image" required
                                 id="pwd1">
                         </div>
-                        <input type="hidden" name="ct2" value="0">
                     </div>
                     {% if prediction1 %}
                     {% else %}
@@ -40,14 +133,25 @@
                     {% endif %}
 
                 </form>
-
-                {% if prediction1 %}
-                <div class="outputimg">
-                    <img src="{{img_path1}}">
+                <div class="output">
+                    {% if prediction1 %}
+                    <div class="outputimg">
+                        <img src="{{img_path1}}">
+                    </div>
+                    <div class="countdown">
+                        <h5> Countdown : {{prediction1}} </h5>
+                     </div>
+                    {% endif %}
                 </div>
-                <div class="countdown">
-                    <h5> Countdown : {{prediction1}} </h5>
+                    {% if prediction1 %}
+                <div class="signal">
+                    <div class="go" ><p id="ct1">{{prediction1}}</p></div>
                 </div>
+                    {% endif %}
+                    {% if prediction2 %}
+                <div class="signal">
+                    <div class="stop"><p id="ct1">{{prediction2}}</p></div>
+                 </div>
                 {% endif %}
             </div>
             <div class="side2">
@@ -60,7 +164,6 @@
                             <input type="file" class="form-control"  name="my_image1" required
                                 id="pwd2">
                         </div>
-                        <input type="hidden" name="ct1" value="0">
                     </div>
                     {% if prediction2 %}
                     {% else %}
@@ -71,21 +174,25 @@
                     </div>
                     {% endif %}
                 </form>
-
-                {% if prediction2 %}
-                <div class="outputimg">
-                    <img src="{{img_path2}}">
+                <div class="output">
+                    {% if prediction2 %}
+                    <div class="outputimg">
+                        <img src="{{img_path2}}">
+                    </div>
+                    <div class="countdown">
+                        <h5> Countdown : {{prediction2}} </h5>
+                    </div>
+                    {% endif %}
                 </div>
-                <div class="countdown">
-                    <h5> Countdown : {{prediction2}} </h5>
+                    {% if prediction2 %}
+                <div class="signal">
+                    <div class="go"><p id="ct2">{{prediction2}}</p></div>
                 </div>
-                <script>
-                    function disable2(){
-                        document.getElementById("button2").display="none";
-                        document.getElementById("button1").display="block";
-                    }
-                    disable2();
-                </script>
+                    {% endif %}
+                    {% if prediction1 %}
+                <div class="signal">
+                    <div class="stop"><p id="ct2">{{prediction1}}</p></div>
+                </div>
                 {% endif %}
             </div>
 
@@ -93,5 +200,47 @@
 
     </div>
 </body>
+<script>
+    const TIME_LIMIT = document.getElementById("ct1").innerHTML;
+
+    /*let timePassed = 0;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+        while(timeLeft>=0)
+            // The amount of time passed increments by one
+            timeLeft = TIME_LIMIT - 1;
+
+            // The time left label is updated
+            document.getElementById("ct1").innerHTML = timeLeft;
+            document.getElementById("ct2").innerHTML = timeLeft;
+        }, 500);
+        }
+    }
+    startTimer();
+    */
+    var timeLeft = document.getElementById("ct1").innerHTML;
+    var elem1 = document.getElementById('ct1');
+    var elem2 = document.getElementById('ct2');
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+        if (timeLeft == 0) {
+            clearTimeout(timerId);
+            doSomething();
+        } else {
+            timeLeft--;
+            elem1.innerHTML = timeLeft;
+            elem2.innerHTML = timeLeft;
+
+        }
+    }
+
+    function doSomething() {
+
+    }
+</script>
 
 </html>
