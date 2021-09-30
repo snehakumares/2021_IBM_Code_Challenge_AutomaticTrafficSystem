@@ -1,26 +1,16 @@
 import cv2
 import cvlib as cv
-import matplotlib.pyplot as plt
-import cvlib as cv
-from cvlib.object_detection import draw_bbox
 
-#function to count the number of vehicles from image
+# Function to count the number of vehicles from image
 def count_vehicle(img):
-
-    #image from file name is stored to im
+    # Image from file name is stored to im
     im = cv2.imread(img)
 
-    #different objects in the image are detected
-    bbox, label, conf = cv.detect_common_objects(im)
-    # output_image = draw_bbox(im, bbox, label, conf)
+    # Define labels for the objects in the image using the YOLO library. 
+    _, label, _ = cv.detect_common_objects(im)
 
-    #only count the objects which are labelled as bicycle,car,motorcycle,bus and truck
-    print("Vehicle Count : " + str(
-        label.count('bicycle') +
-        label.count('car') +
-        label.count('motorcycle') +
-        label.count('bus') +
-        label.count('truck')
-    )
-          )
-    return label.count('bicycle') + label.count('car') + label.count('motorcycle') + label.count('bus') + label.count('truck')
+    # Count the vehicles which are labelled as bicycle, car, motorcycle, bus and truck
+    count = label.count('bicycle') + label.count('car') + label.count('motorcycle') + label.count('bus') + label.count('truck')
+    print("Vehicle Count : {}".format(count))
+    
+    return count

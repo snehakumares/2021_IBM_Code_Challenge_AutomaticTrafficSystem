@@ -2,8 +2,8 @@
 # For the sake of simplicity, images are saved within the folder using the a naming convention
 
 # OpenCV is used to read images and identify various objects in the image using pretrained models from YOLO library.
-# Visit https://opencv.org/about/ and https://github.com/pjreddie/darknet/wiki/YOLO:-Real-Time-Object-Detection for
-# more information on the models and operations
+# Visit https://opencv.org/about/ and https://github.com/pjreddie/darknet/wiki/YOLO:-Real-Time-Object-Detection
+# for more information on the models and operations
 
 import cv2
 import time
@@ -20,7 +20,7 @@ while True:
     for image in junc_images:
         im = cv2.imread(image)
         
-        # Define labels for the objects in the image using the YOLO library. 
+        # Define labels, bounding box and confidence for the objects in the image using the YOLO library. 
         bbox, label, conf = cv.detect_common_objects(im)
 
         # Create a bounding box with label and confidence levels
