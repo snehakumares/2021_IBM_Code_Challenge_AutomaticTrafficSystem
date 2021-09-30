@@ -30,7 +30,7 @@ This is as an embedded system. The software and required hardware are integrated
 - Code Editor of your choice. (Eg. VSCode, Sublime Text, Atom, etc.)
 
 The repository is split into two segment:
-- `bin` folder contains the core python scripts that can be embedded into a system for direct functioning.
+- `bin` folder contains the core python scripts that can be embedded into a system for direct functioning after slight modifications.
 - `src` folder contains a Flask application which can be used to demonstrate the interaction of camera and backend processing.
 
 `Step 1` : Excute command ```pip install requirements.txt```. This will install all the libraries needed to run the program.
@@ -53,11 +53,11 @@ The repository is split into two segment:
 
 ## Contributors
 
-- Abhilash Nair *NSS College of Engineering, Palakkad*
-- Abhishek T *NSS College of Engineering, Palakkad*
-- Amrutha V.P *NSS College of Engineering, Palakkad*
-- Divya K *NSS College of Engineering, Palakkad*
-- Sneha Kumaresan *NSS College of Engineering, Palakkad*
+- Abhilash Nair, *NSS College of Engineering, Palakkad*
+- Abhishek T, *NSS College of Engineering, Palakkad*
+- Amrutha V.P, *NSS College of Engineering, Palakkad*
+- Divya K, *NSS College of Engineering, Palakkad*
+- Sneha Kumaresan, *NSS College of Engineering, Palakkad*
 
 ## License
 
