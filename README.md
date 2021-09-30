@@ -1,4 +1,4 @@
-# Automatic Traffic System
+# Automatic Traffic Signalling System
 
 An automated traffic signalling system that provides a smart way of defining the flow of vehicles in traffic.
 
