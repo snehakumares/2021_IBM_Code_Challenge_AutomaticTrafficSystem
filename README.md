@@ -27,6 +27,8 @@ This is as an embedded system. The software and required hardware are integrated
 - Download Python from [here](https://www.python.org/downloads/)
 - Code Editor of your choice. (Eg. VSCode, Sublime Text, Atom, etc.)
 
+Clone the repository : git clone https://github.com/snehakumares/2021_IBM_Code_Challenge_AutomaticTrafficSystem or downlaod the zip from the main page of repository and navigate into the root directory.
+
 The repository is split into two segment:
 - `bin` folder contains the core python scripts that can be embedded into a system for direct functioning after slight modifications.
 - `src` folder contains a Flask application which can be used to demonstrate the interaction of camera and backend processing.
