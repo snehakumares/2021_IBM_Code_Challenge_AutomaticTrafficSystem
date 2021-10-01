@@ -42,7 +42,7 @@ The repository is split into two segment:
 `Step 4` : Provide image for respective side and submit the form. A suitable timer will be displayed on the screen.
 
 ## Problems faced during development
-- Camera positions must be fixed for a particular direction. Vehicles in other side of the roads may come in the view of a camera which is facing a particular side that may affect the systems accuracy.
+- Camera positions must be fixed for a particular direction. Vehicles on the other side of the roads may come in the view of a camera which is facing a particular side that may affect the systems accuracy.
 - Highly congested traffic is difficult to be analyzed and taken count of.
 - Camera operation in different weather conditions and low-light.
 
