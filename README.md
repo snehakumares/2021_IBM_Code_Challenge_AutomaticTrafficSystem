@@ -1,6 +1,6 @@
 # Automatic Traffic Signalling System :traffic_light:
 
-An automated traffic signalling system that provides a smart way of defining the flow of vehicles in traffic.
+An automated traffic signalling system for regulating the flow of vehicles in traffic taking into consideration the congestion and providing optimum countdown.
 
 ## The Problem
 
