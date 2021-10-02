@@ -43,12 +43,11 @@ while True:
         cv2.imshow('image',im)
         cv2.waitKey(1)
 
-        # Run the timer
+        #Run the timer
         print('---\nVehicle count : {}'.format(count))
         print('Calculating countdown...')
         print('Timer running')
-
-        # Display a countdown timer
+        
         for i in range(timer, 0, -1):
             print(i, end = '\r')
             time.sleep(1)
